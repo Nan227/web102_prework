@@ -93,7 +93,6 @@ const numberOfGames = GAMES_JSON.length;
 // Set the inner HTML of the games card using a template literal
 gamesCard.innerHTML = `${numberOfGames} games`;
 
-
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
  * total number of contributions, amount donated, and number of games on the site.
@@ -117,7 +116,6 @@ function filterFundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have met or exceeded their goal
-
     const fundedGames = GAMES_JSON.filter(game => game.pledged >= game.goal);
     // use the function we previously created to add unfunded games to the DOM
     addGamesToPage(fundedGames);
@@ -137,10 +135,10 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
-
 unfundedBtn.addEventListener('click', filterUnfundedOnly);
 fundedBtn.addEventListener('click', filterFundedOnly);
 allBtn.addEventListener('click', showAllGames);
+
 /*************************************************************************************
  * Challenge 6: Add more information at the top of the page about the company.
  * Skills used: template literals, ternary operator
@@ -150,13 +148,17 @@ allBtn.addEventListener('click', showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-
+const numOfUnfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal).length;
 
 // create a string that explains the number of unfunded games using the ternary operator
 
+const unfundedGamesSMS = `There ${numOfUnfundedGames === 1 ? 'is' : 'are'} ${numOfUnfundedGames} unfunded game${numOfUnfundedGames === 1 ? '' : 's'} on the platform.`;
+
 
 // create a new DOM element containing the template string and append it to the description container
-
+const unfundedGameInfo = document.createElement('p');
+unfundedGameInfo.textContent = unfundedGamesSMS;
+descriptionContainer.appendChild(unfundedGameInfo);
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
  * Skills used: spread operator, destructuring, template literals, sort 
