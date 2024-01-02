@@ -17,11 +17,13 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [x] Add background image 
+* [x] Add a background image 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
+
+GIF created with www.SceenToGif.com
 
 ![WEB102Prework](https://github.com/Nan227/web102_prework/blob/main/assets/piyapornWEB102Prework.gif)
 
@@ -29,7 +31,7 @@ Here's a walkthrough of implemented features:
 
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
