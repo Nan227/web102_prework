@@ -151,12 +151,16 @@ allBtn.addEventListener('click', showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-
+const numOfUnfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal).length;
 
 // create a string that explains the number of unfunded games using the ternary operator
 
+const unfundedGamesSMS = ` By making a minimum contribution, you will help thoses unfuneded games alive. There ${numOfUnfundedGames === 1 ? 'is': 'are'} ${numOfUnfundedGames} unfuneded game${numOfUnfundedGames === 1? '': 's' } on the platform.`;
 
 // create a new DOM element containing the template string and append it to the description container
+const unfundedGameInfo = document.createElement('h2');
+unfundedGameInfo.textContent = unfundedGamesSMS;
+descriptionContainer.appendChild(unfundedGameInfo);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
@@ -171,7 +175,28 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [topGame, runnerUpGame] = sortedGames.slice(0,2);
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+const topPledeGame = document.createElement('h2');
+topPledeGame.textContent = `${topGame.name}`;
+firstGameContainer.appendChild(topPledeGame);
+
+// add img
+const topGameImg = document.createElement('img');
+topGameImg.src = topGame.img;
+topGameImg.alt = topGame.name;
+topGameImg.classList.add('game-img');
+firstGameContainer.appendChild(topGameImg);
 
 // do the same for the runner up item
+const runnerUpItem = document.createElement('h2');
+runnerUpItem.textContent = `${runnerUpGame.name}`;
+secondGameContainer.appendChild(runnerUpItem);
+
+// add img
+const runnerUpImg = document.createElement('img');
+runnerUpImg.src = runnerUpGame.img;
+runnerUpImg.alt = runnerUpGame.name;
+runnerUpImg.classList.add('game-img');
+secondGameContainer.appendChild(runnerUpImg);
