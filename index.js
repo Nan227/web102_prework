@@ -92,7 +92,7 @@ const gamesCard = document.getElementById("num-games");
 const numberOfGames = GAMES_JSON.length;
 
 // Set the inner HTML of the game card using a template literal
-gameCard.innerHTML = `${numberOfGames} game`;
+gamesCard.innerHTML = `${numberOfGames} game`;
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
