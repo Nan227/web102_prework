@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    opacity: 0.8;
 }
 h2 {
     text-align: center;
@@ -46,7 +47,7 @@ h2 {
 }
 
 .stats-card {
-    background-color: #a8b3c4;
+    background-color: #d4dcea;
     border-radius: 7px;
     padding: 1%;
     margin: 1%;
@@ -79,7 +80,7 @@ h2 {
 }
 
 .game-card {
-    background-color: #FFFFFF;
+    background-color: #e3e2e2;
     padding: 1%;
     margin: 1%;
     width: 300px;
@@ -115,4 +116,9 @@ button:hover {
     
     cursor: pointer;
     box-shadow: 0 0 30px lightblue;
+}
+
+.copyright{
+    text-align: center;
+    color: rgb(104, 152, 135);
 }
