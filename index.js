@@ -62,6 +62,7 @@ function addGamesToPage(games) {
 // later, we'll call this function using a different list of games
 
 addGamesToPage(GAMES_JSON);
+
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the
  * total number of contributions, amount donated, and number of games on the site.
@@ -75,16 +76,16 @@ const contributionsCard = document.getElementById("num-contributions");
 const totalContributions = GAMES_JSON.reduce(( acc, game) => acc + game.backers, 0);
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
-contributionsCard.innerHTML = `${totalContributions.toLocalString()} contributions`;
+contributionsCard.innerHTML = `${totalContributions.toLocaleString()} contributions`;
 
 // Calculate the total amount raised using reduce()
-const totalRaised = GAMES_JSON.reduce(( acc + game.pledged, 0));
+const totalRaised = GAMES_JSON.reduce(( acc, game)=> acc + game.pledged, 0);
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
 
 // set inner HTML using template literal
-raisedCard.innerHTML = `$${totalRaised.toLocalString()} raised`;
+raisedCard.innerHTML = `$${totalRaised.toLocaleString()} raised`;
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
@@ -93,7 +94,7 @@ const gamesCard = document.getElementById("num-games");
 const numberOfGames = GAMES_JSON.length;
 
 // Set the inner HTML of the game card using a template literal
-gamesCard.innerHTML = `${numberOfGames} game`;
+gamesCard.innerHTML = `${numberOfGames} games`;
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
@@ -106,10 +107,10 @@ function filterUnfundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have not yet met their goal
-    const unfundedGame = GAMES_JSON.filter(game => game.pledged < game.goal);
+    const unfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal);
 
     // use the function we previously created to add the unfunded games to the DOM
-    addGamesToPage(unfundedGame);
+    addGamesToPage(unfundedGames);
 }
 
 // show only games that are fully funded
