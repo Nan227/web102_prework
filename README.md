@@ -22,8 +22,9 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
+https://github.com/Nan227/web102_prework/blob/main/assets/piyapornWEB102Prework.gif
 
-![WEB102Prework](https://user-images.githubusercontent.com/45270593/53965739-bcae9500-40bf-11e9-9619-fbb0f9b95535.gif)
+![WEB102Prework]([(https://github.com/Nan227/web102_prework/blob/main/assets/piyapornWEB102Prework.gif)]
 
 
 
